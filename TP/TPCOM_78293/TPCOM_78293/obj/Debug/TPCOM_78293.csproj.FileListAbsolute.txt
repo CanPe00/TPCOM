@@ -1,0 +1,30 @@
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\bin\Debug\TPCOM_78293.exe.config
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\bin\Debug\TPCOM_78293.exe
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\bin\Debug\TPCOM_78293.pdb
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csprojAssemblyReference.cache
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.Form1.resources
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.Properties.Resources.resources
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csproj.GenerateResource.cache
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.exe
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.pdb
+D:\Usuario\Documents\Facultad\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\bin\Debug\TPCOM_78293.exe.config
+D:\Usuario\Documents\Facultad\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\bin\Debug\TPCOM_78293.exe
+D:\Usuario\Documents\Facultad\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\bin\Debug\TPCOM_78293.pdb
+D:\Usuario\Documents\Facultad\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csproj.AssemblyReference.cache
+D:\Usuario\Documents\Facultad\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.Form1.resources
+D:\Usuario\Documents\Facultad\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.Properties.Resources.resources
+D:\Usuario\Documents\Facultad\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csproj.GenerateResource.cache
+D:\Usuario\Documents\Facultad\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csproj.CoreCompileInputs.cache
+D:\Usuario\Documents\Facultad\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.exe
+D:\Usuario\Documents\Facultad\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.pdb
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\prueba\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\bin\Debug\TPCOM_78293.exe.config
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\prueba\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\bin\Debug\TPCOM_78293.exe
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\prueba\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\bin\Debug\TPCOM_78293.pdb
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\prueba\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csprojAssemblyReference.cache
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\prueba\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.Form1.resources
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\prueba\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.Properties.Resources.resources
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\prueba\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csproj.GenerateResource.cache
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\prueba\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\prueba\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.exe
+C:\Users\Admin\OneDrive\Documentos\4º AÑO\prueba\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.pdb
