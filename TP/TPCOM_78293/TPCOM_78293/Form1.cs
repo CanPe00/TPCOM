@@ -148,9 +148,9 @@ namespace TPCOM_78293
             jitter = Convert.ToDouble(txtJitter_C.Text);
             frecuenciaSeñal = Convert.ToDouble(txtFrecuenciaSeñal.Text);
             amplitudSeñal = Convert.ToDouble(txtAmplitudSeñal.Text);
-            frecuenciaSeñal = frecuenciaSeñal + (jitter / 100);
+            frecuenciaSeñal = frecuenciaSeñal + ((jitter*frecuenciaSeñal)/100);
             a = tiempo6;
-            indice2 = tiempo6;
+            indice2 = tiempo6 ;
             tiempoSimulacion= Convert.ToDouble(txtTiempoSim.Text);
             cant_bps= Convert.ToDouble(txtCantbps.Text);
 
@@ -242,7 +242,7 @@ namespace TPCOM_78293
             
             //double ciclo = (Math.PI / (frecuenciaRuido + frecuenciaSeñal));
 
-            bool band1 = false ;
+           
             Random objRandom = new Random();
             btnSimular_C.Enabled = false;
             btnContinuar_C.Enabled = true;
@@ -252,7 +252,7 @@ namespace TPCOM_78293
             for (double x = indice2; !(x > (tiempoSimulacion)); x += 0.01)
             {
                 
-                //double aux2 = amplitudRuido * Math.Sin(2 * Math.PI * x * frecuencia + NextDouble(-0.9, 1));
+                //double aux2 = amplitudRuido * Math.Cos(2 * Math.PI * x * frecuencia + NextDouble(-0.9, 1));
                 double aux2 = amplitudRuido * Math.Sin(2 * Math.PI * x * frecuenciaRuido);
                 double aux1 = amplitudSeñal * Math.Sin(2 * Math.PI * x * frecuenciaSeñal);
                 
@@ -268,14 +268,14 @@ namespace TPCOM_78293
                 //signal[i] = aux2 + aux1;
                 //if (i > 0) band1 = signal[i] > 0 && signal[i - 1] < 0 || signal[i] < 0 && signal[i - 1] > 0 ? true : false;
 
-                band1 = (Math.Round(x,2)) % cant_bps == 0 ? true: false ;
-                if (band1) {
-                    
+                //band1 = (Math.Round(x,2)) % cant_bps == 0 ? true: false ;
+                if (Math.Round(a, 2) == cant_bps)
+                {
+
                     a = tiempo6;
                     opc++;
                     nuevaSerie();
-                    //band1 = false;
-
+                    
                     if (!completo)
                     {
                         indice2 = x + 0.01;
@@ -374,7 +374,7 @@ namespace TPCOM_78293
                 if (codigo[i].ToString() == "1")
                 {
                     double rndJitter = (objRandom.NextDouble() * ((jitter_D / 100) - (-jitter_D / 100) + (-jitter_D / 100)));
-                    for (double j = tiempo3 + 0.05; j < tiempo3 + 0.5; j += 0.02)
+                    for (double j = tiempo3 + 0.07; j < tiempo3 + 0.5; j += 0.03)
                     {
                         double rndRuido = (objRandom.NextDouble() * ((ruido_D / 100) - (0) + (0)));
                         
@@ -386,7 +386,7 @@ namespace TPCOM_78293
                 else
                 {
                     double rndJitter = (objRandom.NextDouble() * ((jitter_D / 100) - (-jitter_D / 100) + (-jitter_D / 100)));
-                    for (double j = tiempo3 + 0.05; j < tiempo3 + 0.5; j += 0.02)
+                    for (double j = tiempo3 + 0.07; j < tiempo3 + 0.5; j += 0.03)
                     {
                         double rndRuido = (objRandom.NextDouble() * ((ruido_D / 100) - (0) + (0)));
                         
