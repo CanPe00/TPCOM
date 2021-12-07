@@ -38,3 +38,13 @@ C:\Users\Andres\Desktop\Proyectos\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPC
 C:\Users\Andres\Desktop\Proyectos\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csproj.CoreCompileInputs.cache
 C:\Users\Andres\Desktop\Proyectos\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.exe
 C:\Users\Andres\Desktop\Proyectos\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.pdb
+D:\Usuario\Documents\TP COM\TPCOM\TP\TPCOM_78293\TPCOM_78293\bin\Debug\TPCOM_78293.exe.config
+D:\Usuario\Documents\TP COM\TPCOM\TP\TPCOM_78293\TPCOM_78293\bin\Debug\TPCOM_78293.exe
+D:\Usuario\Documents\TP COM\TPCOM\TP\TPCOM_78293\TPCOM_78293\bin\Debug\TPCOM_78293.pdb
+D:\Usuario\Documents\TP COM\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csproj.AssemblyReference.cache
+D:\Usuario\Documents\TP COM\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.Form1.resources
+D:\Usuario\Documents\TP COM\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.Properties.Resources.resources
+D:\Usuario\Documents\TP COM\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csproj.GenerateResource.cache
+D:\Usuario\Documents\TP COM\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csproj.CoreCompileInputs.cache
+D:\Usuario\Documents\TP COM\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.exe
+D:\Usuario\Documents\TP COM\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.pdb

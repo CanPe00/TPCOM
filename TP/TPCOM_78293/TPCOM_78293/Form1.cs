@@ -18,7 +18,13 @@ namespace TPCOM_78293
         Stopwatch reloj = new Stopwatch();
         int indice1, indice3, indice4, cant = 0;
         int opc = 1;
-        double tiempoSimulacion, tiempo1, tiempo2, tiempo3, tiempo4,tiempo5,tiempo6, frecuenciaRuido,amplitudRuido, frecuenciaSeñal, amplitudSeñal,jitter, inicio, indice2,ruido_D,jitter_D,a,amplitud,frecuencia,amplitudFinal,frecuenciaFinal;
+        double tiempoSimulacion, cant_bps,tiempo1, tiempo2, tiempo3, tiempo4,tiempo5,tiempo6, frecuenciaRuido,amplitudRuido, frecuenciaSeñal, amplitudSeñal,jitter, inicio, indice2,ruido_D,jitter_D,a,amplitud,frecuencia,amplitudFinal,frecuenciaFinal;
+        bool completo = false;
+        private void btnSimularCompleto_Click(object sender, EventArgs e)
+        {
+            completo = true;
+            btnSimular_C_Click(sender, e);
+        }
 
         private void label16_Click(object sender, EventArgs e)
         {
@@ -60,7 +66,7 @@ namespace TPCOM_78293
             indice1 = 0;
             indice3 = 0;
             indice4 = 0;
-            btnContinuar.Enabled = true;
+            btnContinuar.Enabled = false;
             chart1.Series.Clear();
             chart1.Series.Add("0");
             chart1.Series["0"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -73,6 +79,9 @@ namespace TPCOM_78293
             chart4.Series.Add("0");
             chart4.Series["0"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             chart4.Series["0"].BorderWidth = 3;
+            btnSimular.Enabled = true;
+            
+           
         }
 
         private void btnLimpiar_C_Click(object sender, EventArgs e)
@@ -108,7 +117,7 @@ namespace TPCOM_78293
             chart6.ChartAreas.Clear();
             chart6.ChartAreas.Add("ChartArea1");
 
-
+            completo = false;
             btnSimular_C.Enabled = true;
 
 
@@ -125,7 +134,7 @@ namespace TPCOM_78293
 
             tabPage1.AutoScroll = true;
             btnContinuar_C.Enabled = false;
-            
+            btnContinuar.Enabled = false;
         }
 
         private void btnSimular_C_Click(object sender, EventArgs e)
@@ -143,6 +152,7 @@ namespace TPCOM_78293
             a = tiempo6;
             indice2 = tiempo6;
             tiempoSimulacion= Convert.ToDouble(txtTiempoSim.Text);
+            cant_bps= Convert.ToDouble(txtCantbps.Text);
 
             if (txtMaxX_1.Text.Length != 0)
             {
@@ -186,6 +196,8 @@ namespace TPCOM_78293
 
         private void btnSimular_Click_1(object sender, EventArgs e)
         {
+            btnSimular.Enabled = false;
+            btnContinuar.Enabled = true;
             codigo = Convert.ToString(txtCodigo.Text);
             tiempo1 = Convert.ToDouble(txtInicio.Text);
             tiempo2 = Convert.ToDouble(txtInicio.Text);
@@ -227,8 +239,8 @@ namespace TPCOM_78293
 
         private void grafico6()
         {
-            nuevaSerieDos();
-            double ciclo = (1 / frecuencia) / 2;
+            
+            //double ciclo = (Math.PI / (frecuenciaRuido + frecuenciaSeñal));
 
             bool band1 = false ;
             Random objRandom = new Random();
@@ -239,47 +251,16 @@ namespace TPCOM_78293
 
             for (double x = indice2; !(x > (tiempoSimulacion)); x += 0.01)
             {
-                i++;
-                if (opc==tiempoSimulacion+1)
-                    btnContinuar_C.Enabled = false;
-
-                if (amplitud != 0)
-                {
-                    amplitudRuido = (amplitud + NextDouble(-0.5,0.5)) ;
-                    amplitudFinal = amplitudRuido * amplitudSeñal;
-                }
-                else
-                {
-                    amplitudFinal = amplitudSeñal;
-                }
                 
-                if (frecuencia != 0)
-                {
-                    frecuenciaRuido = (frecuencia + NextDouble(-0.9, 1));
-                    frecuenciaFinal = frecuenciaRuido * frecuenciaSeñal;
-                }
-                else
-                {
-                    frecuenciaFinal = frecuenciaSeñal;
-                }
-
-
-
-                //sinudoide
-                //jitter afecta a la sinusoide
-
-                //double aux2 = amplitudRuido * Math.Sin(2 * Math.PI * x * frecuencia + NextDouble(-0.9, 1)) + (amplitud + NextDouble(-0.9, 1)) * Math.Sin((2 * Math.PI * x * frecuencia + NextDouble(-0.9, 1) ) * 2) + (amplitud + NextDouble(-1, 1)) * Math.Sin((2 * Math.PI * x * frecuencia * NextDouble(-0.9, 1)) * 3);
-                double aux2 = amplitudRuido * Math.Sin(2 * Math.PI * x * frecuencia + NextDouble(-0.9, 1));
-
+                //double aux2 = amplitudRuido * Math.Sin(2 * Math.PI * x * frecuencia + NextDouble(-0.9, 1));
+                double aux2 = amplitudRuido * Math.Sin(2 * Math.PI * x * frecuenciaRuido);
                 double aux1 = amplitudSeñal * Math.Sin(2 * Math.PI * x * frecuenciaSeñal);
                 
-                //ruido
-                //afectada por su amplitud y su frecuencia
 
-                chart5.Series[0].Points.AddXY(x,  aux1);
-                chart5.Series[1].Points.AddXY(x, aux2);
+                chart5.Series[0].Points.AddXY(x,  aux1+aux2);
+               
                 chart6.Series[opc].Points.AddXY(a, aux1 + aux2);
-                chart6.Series[0].Points.AddXY(a, aux1 + aux2);
+                
                 a += 0.01;
 
 
@@ -287,24 +268,22 @@ namespace TPCOM_78293
                 //signal[i] = aux2 + aux1;
                 //if (i > 0) band1 = signal[i] > 0 && signal[i - 1] < 0 || signal[i] < 0 && signal[i - 1] > 0 ? true : false;
 
-                band1 = (int)x % ciclo == 0;
-                if (x > ciclo) {
-                    ciclo = ciclo + (1 / frecuencia) / 2;
+                band1 = (Math.Round(x,2)) % cant_bps == 0 ? true: false ;
+                if (band1) {
+                    
                     a = tiempo6;
                     opc++;
                     nuevaSerie();
-                    band1 = false;
+                    //band1 = false;
 
-                    if (opc >= 3)
+                    if (!completo)
                     {
-
-                        //indice2 = x + 0.01;
-                        //break;
+                        indice2 = x + 0.01;
+                        break;
                     }
+                   
+                    
                 }
-
-
-
 
             }
 
@@ -317,13 +296,7 @@ namespace TPCOM_78293
             chart6.Series[$"{opc}"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             chart6.Series[$"{opc}"].BorderWidth = 3;
         }
-        private void nuevaSerieDos()
-        {
-            chart5.Series.Add($"{1}");
-            chart5.Series[$"{1}"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            chart5.Series[$"{1}"].BorderWidth = 3;
-        }
-
+       
         private void btnContinuar_Click_1(object sender, EventArgs e)
         {
             grafico1();
