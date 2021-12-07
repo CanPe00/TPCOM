@@ -28,3 +28,13 @@ C:\Users\Admin\OneDrive\Documentos\4º AÑO\prueba\4to\Comunicaciones\TP\TPCOM_7
 C:\Users\Admin\OneDrive\Documentos\4º AÑO\prueba\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csproj.CoreCompileInputs.cache
 C:\Users\Admin\OneDrive\Documentos\4º AÑO\prueba\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.exe
 C:\Users\Admin\OneDrive\Documentos\4º AÑO\prueba\4to\Comunicaciones\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.pdb
+C:\Users\Andres\Desktop\Proyectos\TPCOM\TP\TPCOM_78293\TPCOM_78293\bin\Debug\TPCOM_78293.exe.config
+C:\Users\Andres\Desktop\Proyectos\TPCOM\TP\TPCOM_78293\TPCOM_78293\bin\Debug\TPCOM_78293.exe
+C:\Users\Andres\Desktop\Proyectos\TPCOM\TP\TPCOM_78293\TPCOM_78293\bin\Debug\TPCOM_78293.pdb
+C:\Users\Andres\Desktop\Proyectos\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csprojAssemblyReference.cache
+C:\Users\Andres\Desktop\Proyectos\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.Form1.resources
+C:\Users\Andres\Desktop\Proyectos\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.Properties.Resources.resources
+C:\Users\Andres\Desktop\Proyectos\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csproj.GenerateResource.cache
+C:\Users\Andres\Desktop\Proyectos\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.csproj.CoreCompileInputs.cache
+C:\Users\Andres\Desktop\Proyectos\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.exe
+C:\Users\Andres\Desktop\Proyectos\TPCOM\TP\TPCOM_78293\TPCOM_78293\obj\Debug\TPCOM_78293.pdb

@@ -227,15 +227,19 @@ namespace TPCOM_78293
 
         private void grafico6()
         {
-            
+            nuevaSerieDos();
+            double ciclo = (1 / frecuencia) / 2;
+
             bool band1 = false ;
             Random objRandom = new Random();
             btnSimular_C.Enabled = false;
             btnContinuar_C.Enabled = true;
-            
-            
+            int i = 0;
+            double[] signal = new double[(int)(tiempoSimulacion / 0.01)];
+
             for (double x = indice2; !(x > (tiempoSimulacion)); x += 0.01)
             {
+                i++;
                 if (opc==tiempoSimulacion+1)
                     btnContinuar_C.Enabled = false;
 
@@ -251,7 +255,7 @@ namespace TPCOM_78293
                 
                 if (frecuencia != 0)
                 {
-                    frecuenciaRuido = (frecuencia + NextDouble(-0.5, 0.5));
+                    frecuenciaRuido = (frecuencia + NextDouble(-0.9, 1));
                     frecuenciaFinal = frecuenciaRuido * frecuenciaSeñal;
                 }
                 else
@@ -259,27 +263,33 @@ namespace TPCOM_78293
                     frecuenciaFinal = frecuenciaSeñal;
                 }
 
-               
+
 
                 //sinudoide
                 //jitter afecta a la sinusoide
 
-                double aux1 = amplitudFinal * Math.Sin(2 * Math.PI * x * frecuenciaFinal);
+                //double aux2 = amplitudRuido * Math.Sin(2 * Math.PI * x * frecuencia + NextDouble(-0.9, 1)) + (amplitud + NextDouble(-0.9, 1)) * Math.Sin((2 * Math.PI * x * frecuencia + NextDouble(-0.9, 1) ) * 2) + (amplitud + NextDouble(-1, 1)) * Math.Sin((2 * Math.PI * x * frecuencia * NextDouble(-0.9, 1)) * 3);
+                double aux2 = amplitudRuido * Math.Sin(2 * Math.PI * x * frecuencia + NextDouble(-0.9, 1));
 
+                double aux1 = amplitudSeñal * Math.Sin(2 * Math.PI * x * frecuenciaSeñal);
+                
                 //ruido
                 //afectada por su amplitud y su frecuencia
 
-                chart5.Series[0].Points.AddXY(x, aux1);
-                chart6.Series[opc].Points.AddXY(a, aux1);
-
+                chart5.Series[0].Points.AddXY(x,  aux1);
+                chart5.Series[1].Points.AddXY(x, aux2);
+                chart6.Series[opc].Points.AddXY(a, aux1 + aux2);
+                chart6.Series[0].Points.AddXY(a, aux1 + aux2);
                 a += 0.01;
 
 
-                band1 = (Math.Sin(2 * Math.PI * x * frecuenciaFinal) <= 0 && Math.Sin(2 * Math.PI * (x+0.01) * frecuenciaFinal) > 0)  || (Math.Sin(2 * Math.PI * x * frecuenciaFinal) < 0 && Math.Sin(2 * Math.PI * (x + 0.01) * frecuenciaFinal)>= 0) || (Math.Sin(2 * Math.PI * x * frecuenciaFinal) > 0 && Math.Sin(2 * Math.PI * (x + 0.01) * frecuenciaFinal) <= 0) || (Math.Sin(2 * Math.PI * x * frecuenciaFinal) >= 0 && Math.Sin(2 * Math.PI * (x + 0.01) * frecuenciaFinal) < 0)  ? true : false;
-                
-                
-                if (band1)
-                {
+                //band1 = (Math.Sin(2 * Math.PI * x * frecuenciaFinal) <= 0 && Math.Sin(2 * Math.PI * (x+0.01) * frecuenciaFinal) > 0)  || (Math.Sin(2 * Math.PI * x * frecuenciaFinal) < 0 && Math.Sin(2 * Math.PI * (x + 0.01) * frecuenciaFinal)>= 0) || (Math.Sin(2 * Math.PI * x * frecuenciaFinal) > 0 && Math.Sin(2 * Math.PI * (x + 0.01) * frecuenciaFinal) <= 0) || (Math.Sin(2 * Math.PI * x * frecuenciaFinal) >= 0 && Math.Sin(2 * Math.PI * (x + 0.01) * frecuenciaFinal) < 0)  ? true : false;
+                //signal[i] = aux2 + aux1;
+                //if (i > 0) band1 = signal[i] > 0 && signal[i - 1] < 0 || signal[i] < 0 && signal[i - 1] > 0 ? true : false;
+
+                band1 = (int)x % ciclo == 0;
+                if (x > ciclo) {
+                    ciclo = ciclo + (1 / frecuencia) / 2;
                     a = tiempo6;
                     opc++;
                     nuevaSerie();
@@ -295,6 +305,7 @@ namespace TPCOM_78293
 
 
 
+
             }
 
             
@@ -305,6 +316,12 @@ namespace TPCOM_78293
             chart6.Series.Add($"{opc}");
             chart6.Series[$"{opc}"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             chart6.Series[$"{opc}"].BorderWidth = 3;
+        }
+        private void nuevaSerieDos()
+        {
+            chart5.Series.Add($"{1}");
+            chart5.Series[$"{1}"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            chart5.Series[$"{1}"].BorderWidth = 3;
         }
 
         private void btnContinuar_Click_1(object sender, EventArgs e)
