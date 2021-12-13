@@ -19,6 +19,9 @@ namespace TPCOM_78293
         int indice1, indice3, indice4, cant = 0;
         int opc = 1;
         double tiempoSimulacion, cant_bps,tiempo1, tiempo2, tiempo3, tiempo4,tiempo5,tiempo6, frecuenciaRuido,amplitudRuido, frecuenciaSeñal, amplitudSeñal,jitter, inicio, indice2,ruido_D,jitter_D,a,amplitud,frecuencia,amplitudFinal,frecuenciaFinal;
+
+        
+
         bool completo = false;
         private void btnSimularCompleto_Click(object sender, EventArgs e)
         {
@@ -26,23 +29,10 @@ namespace TPCOM_78293
             btnSimular_C_Click(sender, e);
         }
 
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         int cantBits, n;
         string codigo;
-
-        
-
-        
-
-        //double rndRuido1, rndRuido2, signoRuido, rndJitter1, rndJitter2,signoJitter;
-
-
-
-
 
         public Form1()
         {
@@ -93,17 +83,11 @@ namespace TPCOM_78293
             indice2 = 0;
             txtFrecuenciaRuido_C.Text = "0";
             txtAmplitudRuido_C.Text = "0";
-            txtFrecuenciaSeñal.Text = "0,5";
-            txtAmplitudSeñal.Text = "1";
-            txtMaxX_1.Text = "";
-            txtMaxY_1.Text = "";
-            txtMinX_1.Text = "";
-            txtMinY_1.Text = "";
-            txtMaxX_2.Text = "";
-            txtMaxY_2.Text = "";
-            txtMinX_2.Text = "";
-            txtMinY_2.Text = "";
+            
             txtTiempoSim.Text = "10";
+
+            opc = 1;
+            indice2 = 0;
             chart5.Series.Clear();
             chart5.Series.Add("0");
             chart5.Series["0"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -139,6 +123,23 @@ namespace TPCOM_78293
 
         private void btnSimular_C_Click(object sender, EventArgs e)
         {
+            opc = 1;
+            indice2 = 0;
+            chart5.Series.Clear();
+            chart5.Series.Add("0");
+            chart5.Series["0"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            chart5.Series["0"].BorderWidth = 3;
+            chart5.ChartAreas.Clear();
+            chart5.ChartAreas.Add("ChartArea1");
+            chart6.Series.Clear();
+            chart6.Series.Add("0");
+            chart6.Series["0"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            chart6.Series["0"].BorderWidth = 3;
+            chart6.ChartAreas.Clear();
+            chart6.ChartAreas.Add("ChartArea1");
+
+            
+            
             tiempo5 = Convert.ToDouble(txtInicio_C.Text);
             tiempo6 = Convert.ToDouble(txtInicio_C.Text);
             frecuenciaRuido = Convert.ToDouble(txtFrecuenciaRuido_C.Text);
@@ -149,10 +150,11 @@ namespace TPCOM_78293
             frecuenciaSeñal = Convert.ToDouble(txtFrecuenciaSeñal.Text);
             amplitudSeñal = Convert.ToDouble(txtAmplitudSeñal.Text);
             frecuenciaSeñal = frecuenciaSeñal + ((jitter*frecuenciaSeñal)/100);
-            a = tiempo6;
-            indice2 = tiempo6 ;
-            tiempoSimulacion= Convert.ToDouble(txtTiempoSim.Text);
+            a = tiempo6 + ((jitter * frecuenciaSeñal) / 100);
+            indice2 = tiempo6 + ((jitter * frecuenciaSeñal) / 100);
+            tiempoSimulacion = Convert.ToDouble(txtTiempoSim.Text);
             cant_bps= Convert.ToDouble(txtCantbps.Text);
+
 
             if (txtMaxX_1.Text.Length != 0)
             {
@@ -187,6 +189,7 @@ namespace TPCOM_78293
             {
                 chart6.ChartAreas["ChartArea1"].AxisY.Minimum = Convert.ToDouble(txtMinY_2.Text);
             }
+
 
             nuevaSerie();
             grafico6();
@@ -244,7 +247,7 @@ namespace TPCOM_78293
 
            
             Random objRandom = new Random();
-            btnSimular_C.Enabled = false;
+            //btnSimular_C.Enabled = false;
             btnContinuar_C.Enabled = true;
             int i = 0;
             double[] signal = new double[(int)(tiempoSimulacion / 0.01)];
@@ -272,7 +275,7 @@ namespace TPCOM_78293
                 if (Math.Round(a, 2) == cant_bps)
                 {
 
-                    a = tiempo6;
+                    a = tiempo6 + ((jitter * frecuenciaSeñal) / 100);
                     opc++;
                     nuevaSerie();
                     
